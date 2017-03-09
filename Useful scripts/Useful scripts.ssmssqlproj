@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Useful scripts">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="DESKTOP-UO0FS87:DESKTOP-UO0FS87\monty">
+          <Created>2017-03-03T07:57:17.9866313+13:00</Created>
+          <Type>SQL</Type>
+          <Server>DESKTOP-UO0FS87</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>export</InitialDB>
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="Begin Transaction with rollback for update.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Begin Transaction with rollback for update.sql</FullPath>
+        </FileNode>
+        <FileNode Name="collation defaults.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>collation defaults.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Convert a UTC Time to a Local Time.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Convert a UTC Time to a Local Time.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Count ALL rows  for ALL tables in DB.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Count ALL rows  for ALL tables in DB.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Count Number of Words and Characters.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Count Number of Words and Characters.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Credit Card Number Validation Escalar Function.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Credit Card Number Validation Escalar Function.sql</FullPath>
+        </FileNode>
+        <FileNode Name="DBCC SHRINKFILE.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>DBCC SHRINKFILE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Disable Rebuild index.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Disable Rebuild index.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Drop all indexes.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Drop all indexes.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Filter errorlog to see only relevant info.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Filter errorlog to see only relevant info.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Find simular column names.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Find simular column names.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Finding missing indexes in sql 2005.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Finding missing indexes in sql 2005.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Grant text view on SP.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Grant text view on SP.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Index usage overview.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Index usage overview.sql</FullPath>
+        </FileNode>
+        <FileNode Name="INDEXES - find not useful.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>INDEXES - find not useful.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Long running SQL server agent jobs.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Long running SQL server agent jobs.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Move mdf and log files.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Move mdf and log files.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Possible bad indexes.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Possible bad indexes.sql</FullPath>
+        </FileNode>
+        <FileNode Name="rebuild all indexes.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>rebuild all indexes.sql</FullPath>
+        </FileNode>
+        <FileNode Name="rebuild sql server compare to UAT PROD.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>rebuild sql server compare to UAT PROD.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Repair suspect DB.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Repair suspect DB.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Script all Index.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Script all Index.sql</FullPath>
+        </FileNode>
+        <FileNode Name="sp_who3.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-UO0FS87:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-UO0FS87</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>sp_who3.sql</FullPath>
+        </FileNode>
+        <FileNode Name="sp_whocpu.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>sp_whocpu.sql</FullPath>
+        </FileNode>
+        <FileNode Name="sp_whoio.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>sp_whoio.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Split string into table, separator can be more than 1 char.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Split string into table, separator can be more than 1 char.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Trim Non-Alpha characters from string.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Trim Non-Alpha characters from string.sql</FullPath>
+        </FileNode>
+        <FileNode Name="udf_GetDaylightSavingsTime.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>udf_GetDaylightSavingsTime.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Using PIVOT.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Using PIVOT.sql</FullPath>
+        </FileNode>
+        <FileNode Name="View to obtain Failed Jobs from SQL Server Agent.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>View to obtain Failed Jobs from SQL Server Agent.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
