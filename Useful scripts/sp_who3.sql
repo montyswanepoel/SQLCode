@@ -6,6 +6,7 @@ IF EXISTS ( SELECT  *
     DROP PROCEDURE dbo.sp_who3;
 GO
 
+
 /*====================================================================
 -- Mircea Anton Nita - 2010
 -- https://www.mcpvirtualbusinesscard.com/VBCServer/Mircea/card
