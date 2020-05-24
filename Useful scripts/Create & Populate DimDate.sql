@@ -1,15 +1,357 @@
+/*
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create PROC [dbo].[dwpPopulateDimDate]
+CREATE TABLE [dbo].[DimDate](
+	[Date] [int] NOT NULL,
+	[FullDateAlternateKey] [date] NOT NULL,
+	[DateEnglishName] [varchar](20) NOT NULL,
+	[DayOfWeek] [smallint] NOT NULL,
+	[DayOfWeekEnglishName] [varchar](20) NOT NULL,
+	[DayOfMonth] [smallint] NOT NULL,
+	[DayOfMonthEnglishName] [varchar](20) NULL,
+	[DayOfQuarter] [smallint] NOT NULL,
+	[DayOfQuarterEnglishName] [varchar](20) NOT NULL,
+	[DayOfTrimester] [smallint] NOT NULL,
+	[DayOfTrimesterEnglishName] [varchar](20) NOT NULL,
+	[DayOfHalfYear] [smallint] NOT NULL,
+	[DayOfHalfYearEnglishName] [varchar](20) NOT NULL,
+	[DayOfYear] [smallint] NOT NULL,
+	[DayOfYearEnglishName] [varchar](20) NOT NULL,
+	[Weekday] [varchar](20) NOT NULL,
+	[Week] [int] NOT NULL,
+	[WeekEnglishName] [varchar](20) NOT NULL,
+	[WeekOfYear] [int] NOT NULL,
+	[WeekOfYearEnglishName] [varchar](20) NOT NULL,
+	[TenDays] [int] NOT NULL,
+	[TenDaysEnglishName] [varchar](20) NOT NULL,
+	[TenDaysOfMonth] [smallint] NOT NULL,
+	[TenDaysOfMonthEnglishName] [varchar](20) NOT NULL,
+	[TenDaysOfQuarter] [smallint] NOT NULL,
+	[TenDaysOfQuarterEnglishName] [varchar](20) NOT NULL,
+	[TenDaysOfTrimester] [smallint] NOT NULL,
+	[TenDaysOfTrimesterEnglishName] [varchar](20) NOT NULL,
+	[TenDaysOfHalfYear] [smallint] NOT NULL,
+	[TenDaysOfHalfYearEnglishName] [varchar](20) NOT NULL,
+	[TenDaysOfYear] [smallint] NOT NULL,
+	[TenDaysOfYearEnglishName] [varchar](20) NOT NULL,
+	[Month] [int] NOT NULL,
+	[MonthEnglishName] [varchar](20) NOT NULL,
+	[MonthOfQuarter] [smallint] NOT NULL,
+	[MonthOfQuarterEnglishName] [varchar](20) NOT NULL,
+	[MonthOfTrimester] [smallint] NOT NULL,
+	[MonthOfTrimesterEnglishName] [varchar](20) NOT NULL,
+	[MonthOfHalfYear] [smallint] NOT NULL,
+	[MonthOfHalfYearEnglishName] [varchar](20) NOT NULL,
+	[MonthOfYear] [smallint] NOT NULL,
+	[MonthOfYearEnglishName] [varchar](20) NOT NULL,
+	[Quarter] [smallint] NOT NULL,
+	[QuarterEnglishName] [varchar](20) NOT NULL,
+	[QuarterOfHalfYear] [smallint] NOT NULL,
+	[QuarterOfHalfYearEnglishName] [varchar](20) NOT NULL,
+	[QuarterOfYear] [smallint] NOT NULL,
+	[QuarterOfYearEnglishName] [varchar](20) NOT NULL,
+	[Trimester] [smallint] NOT NULL,
+	[TrimesterEnglishName] [varchar](20) NOT NULL,
+	[TrimesterOfYear] [smallint] NOT NULL,
+	[TrimesterOfYearEnglishName] [varchar](20) NOT NULL,
+	[HalfYear] [smallint] NOT NULL,
+	[HalfYearEnglishName] [varchar](20) NOT NULL,
+	[HalfYearOfYear] [smallint] NOT NULL,
+	[HalfYearOfYearEnglishName] [varchar](20) NOT NULL,
+	[Year] [smallint] NOT NULL,
+	[YearEnglishName] [varchar](20) NOT NULL,
+	[FiscalDay] [int] NOT NULL,
+	[FiscalDayEnglishName] [varchar](20) NOT NULL,
+	[FiscalDayOfWeek] [smallint] NOT NULL,
+	[FiscalDayOfWeekEnglishName] [varchar](20) NOT NULL,
+	[FiscalDayOfMonth] [smallint] NOT NULL,
+	[FiscalDayOfMonthEnglishName] [varchar](20) NULL,
+	[FiscalDayOfQuarter] [smallint] NOT NULL,
+	[FiscalDayOfQuarterEnglishName] [varchar](20) NOT NULL,
+	[FiscalDayOfTrimester] [smallint] NOT NULL,
+	[FiscalDayOfTrimesterEnglishName] [varchar](20) NOT NULL,
+	[FiscalDayOfHalfYear] [smallint] NOT NULL,
+	[FiscalDayOfHalfYearEnglishName] [varchar](20) NOT NULL,
+	[FiscalDayOfYear] [smallint] NOT NULL,
+	[FiscalDayOfYearEnglishName] [varchar](20) NOT NULL,
+	[FiscalWeek] [int] NOT NULL,
+	[FiscalWeekEnglishName] [varchar](20) NOT NULL,
+	[FiscalWeekOfMonth] [int] NOT NULL,
+	[FiscalWeekOfMonthEnglishName] [varchar](20) NOT NULL,
+	[FiscalWeekOfQuarter] [int] NOT NULL,
+	[FiscalWeekOfQuarterEnglishName] [varchar](20) NOT NULL,
+	[FiscalWeekOfTrimester] [int] NOT NULL,
+	[FiscalWeekOfTrimesterEnglishName] [varchar](20) NOT NULL,
+	[FiscalWeekOfHalfYear] [int] NOT NULL,
+	[FiscalWeekOfHalfYearEnglishName] [varchar](20) NOT NULL,
+	[FiscalWeekOfYear] [int] NOT NULL,
+	[FiscalWeekOfYearEnglishName] [varchar](20) NOT NULL,
+	[FiscalMonth] [int] NOT NULL,
+	[FiscalMonthEnglishName] [varchar](20) NOT NULL,
+	[FiscalMonthOfQuarter] [smallint] NOT NULL,
+	[FiscalMonthOfQuarterEnglishName] [varchar](20) NOT NULL,
+	[FiscalMonthOfTrimester] [smallint] NOT NULL,
+	[FiscalMonthOfTrimesterEnglishName] [varchar](20) NOT NULL,
+	[FiscalMonthOfHalfYear] [smallint] NOT NULL,
+	[FiscalMonthOfHalfYearEnglishName] [varchar](20) NOT NULL,
+	[FiscalMonthOfYear] [smallint] NOT NULL,
+	[FiscalMonthOfYearEnglishName] [varchar](20) NOT NULL,
+	[FiscalQuarter] [smallint] NOT NULL,
+	[FiscalQuarterEnglishName] [varchar](20) NOT NULL,
+	[FiscalQuarterOfHalfYear] [smallint] NOT NULL,
+	[FiscalQuarterOfHalfYearEnglishName] [varchar](20) NOT NULL,
+	[FiscalQuarterOfYear] [smallint] NOT NULL,
+	[FiscalQuarterOfYearEnglishName] [varchar](20) NOT NULL,
+	[FiscalTrimester] [smallint] NOT NULL,
+	[FiscalTrimesterEnglishName] [varchar](20) NOT NULL,
+	[FiscalTrimesterOfYear] [smallint] NOT NULL,
+	[FiscalTrimesterOfYearEnglishName] [varchar](20) NOT NULL,
+	[FiscalHalfYear] [smallint] NOT NULL,
+	[FiscalHalfYearEnglishName] [varchar](20) NOT NULL,
+	[FiscalHalfYearOfYear] [smallint] NOT NULL,
+	[FiscalHalfYearOfYearEnglishName] [varchar](20) NOT NULL,
+	[FiscalYear] [smallint] NOT NULL,
+	[FiscalYearEnglishName] [varchar](20) NOT NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  CONSTRAINT [PK_DimDate] PRIMARY KEY CLUSTERED 
+(
+	[Date] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [DateEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [DayOfWeek]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [DayOfWeekEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [DayOfMonth]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [DayOfMonthEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [DayOfQuarter]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [DayOfQuarterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [DayOfTrimester]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [DayOfTrimesterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [DayOfHalfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [DayOfHalfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [DayOfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [DayOfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [Weekday]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [Week]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [WeekEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [WeekOfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [WeekOfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [TenDays]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [TenDaysEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [TenDaysOfMonth]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [TenDaysOfMonthEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [TenDaysOfQuarter]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [TenDaysOfQuarterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [TenDaysOfTrimester]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [TenDaysOfTrimesterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [TenDaysOfHalfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [TenDaysOfHalfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [TenDaysOfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [TenDaysOfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [Month]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [MonthEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [MonthOfQuarter]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [MonthOfQuarterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [MonthOfTrimester]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [MonthOfTrimesterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [MonthOfHalfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [MonthOfHalfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [MonthOfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [MonthOfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [Quarter]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [QuarterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [QuarterOfHalfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [QuarterOfHalfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [QuarterOfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [QuarterOfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [Trimester]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [TrimesterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [TrimesterOfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [TrimesterOfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [HalfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [HalfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [HalfYearOfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [HalfYearOfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [Year]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [YearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalDay]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalDayEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalDayOfWeek]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalDayOfWeekEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalDayOfMonth]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalDayOfMonthEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalDayOfQuarter]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalDayOfQuarterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalDayOfTrimester]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalDayOfTrimesterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalDayOfHalfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalDayOfHalfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalDayOfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalDayOfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalWeek]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalWeekEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalWeekOfMonth]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalWeekOfMonthEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalWeekOfQuarter]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalWeekOfQuarterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalWeekOfTrimester]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalWeekOfTrimesterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalWeekOfHalfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalWeekOfHalfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalWeekOfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalWeekOfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalMonth]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalMonthEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalMonthOfQuarter]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalMonthOfQuarterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalMonthOfTrimester]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalMonthOfTrimesterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalMonthOfHalfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalMonthOfHalfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalMonthOfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalMonthOfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalQuarter]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalQuarterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalQuarterOfHalfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalQuarterOfHalfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalQuarterOfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalQuarterOfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalTrimester]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalTrimesterEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalTrimesterOfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalTrimesterOfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalHalfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalHalfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalHalfYearOfYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalHalfYearOfYearEnglishName]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ((-1)) FOR [FiscalYear]
+GO
+ALTER TABLE [dbo].[DimDate] ADD  DEFAULT ('Unknown') FOR [FiscalYearEnglishName]
+GO
+
+*/
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+alter PROC [dbo].[dwpPopulateDimDate]
 AS
 begin
     -- For details about setting parameters, please refer to:
     -- http://www.codeproject.com/Articles/1060016/Creating-Date-dimension-from-scratch-in-Microsoft
 
     declare @startDate date = '20190101'
-    declare @endDate date = '20191231'
+    declare @endDate date = '20201231'
     declare @firstDayOfWeek tinyint = 1
     declare @fiscalDay tinyint = 21
     declare @fiscalMonth tinyint = 5
