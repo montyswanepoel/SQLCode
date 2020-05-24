@@ -18,6 +18,7 @@ go
 
 
 
+
 CREATE TABLE Hub_ProdNum
 (
 	Hub_ProdNum_SQN      numeric(12) IDENTITY (1000,1) ,
